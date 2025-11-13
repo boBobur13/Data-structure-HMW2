@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-   int A[100], size PQ=0;
+   int A[100], sizePQ=0;
    int q;
     cin>>q;
     for(int i=0;i<q;i++){
