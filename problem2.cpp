@@ -15,8 +15,13 @@ int main() {
             int smallest=idx;
             if(l<n && A[l]<A[smallest]) smallest=l;
             if(r<n && A[r]<A[smallest]) smallest=r;
-            if(l<n && r <n && A[l]==A[r] && A[l] <A[smallest]) smallest=l;
-            if(smallest!=idx){int t= A[idx];A[idx]= A[smallest];A[smallest]= t; idx=smallest;}
+           
+            if(smallest!=idx){
+            int t= A[idx];
+            A[idx]= A[smallest];
+            A[smallest]=t;
+            idx=smallest;
+            }
             else break;
        }
     }
@@ -34,8 +39,7 @@ int main() {
             int smallest=idx;
             if(l<heapSize && A[l]<A[smallest]) smallest =l;
             if(r<heapSize && A[r]<A[smallest]) smallest=r;
-            if(l<heapSize && r<heapSize && A[l]==A[r] && A[l]<A[smallest]) smallest=l;
-            if(smallest! =idx){int t=A[idx];A[idx]=A[smallest];A[smallest]=t; idx=smallest;}
+            if(smallest!=idx){int t=A[idx];A[idx]=A[smallest];A[smallest]=t; idx=smallest;}
             else break;
         }
     }
