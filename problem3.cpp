@@ -17,33 +17,32 @@ int main() {
             A[sizePQ] = x;
             sizePQ++;
         }
-        else if (cmd == "get max"){
+        else if (cmd.substr(0,7) == "get max"){
             if(sizePQ == 0) cout << "EMPTY" << endl;
             else{
-             int maxVal = A[0];
-            for(int j = 1; j < sizePQ; j++)
-             if(A[j] >= maxVal) maxVal = A[j];
+                int maxVal = A[0];
+                for(int j = 1; j < sizePQ; j++)
+                    if(A[j] > maxVal) maxVal = A[j];
                 cout << maxVal << endl;
             }
         }
-        else if(cmd == "extract max"){
+        else if(cmd.substr(0,11) == "extract max"){
             if(sizePQ == 0) cout << "EMPTY" << endl;
             else{
                 int maxVal = A[0], pos = 0;
-                for(int j = 1; j < sizePQ; j++){
+                 for(int j = 0; j < sizePQ; j++){
                     if(A[j] >= maxVal){
                         maxVal = A[j];
-                        pos = j;
+                         pos = j;
                     }
                 }
-                cout << maxVal << endl;
+                 cout << maxVal << endl;
                 for(int j = pos; j < sizePQ-1; j++) A[j] = A[j+1];
                 sizePQ--;
             }
         }
-        else if(cmd == "size") cout << sizePQ << endl;
+        else if(cmd.substr(0,4) == "size") cout << sizePQ << endl;
     }
 
     return 0;
 }
-
